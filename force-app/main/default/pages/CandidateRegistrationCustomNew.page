@@ -1,0 +1,22 @@
+<apex:page controller="CandidateRecordsController">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:commandButton value="View all Candidate Records" action="{!search}"/>
+        	<apex:pageBlockTable value="{!candRecords}" var="cand">
+            	<apex:column value="{!cand.Salutation__c}"/>
+            	<apex:column value="{!cand.First_Name__c}"/>
+            	<apex:column value="{!cand.Last_Name__c}"/>
+            	<apex:column value="{!cand.Full_Name__c}"/>
+            	<apex:column value="{!cand.DOB__c}"/>
+            	<apex:column value="{!cand.Age__c}"/>
+            	<apex:column value="{!cand.Application_Date__c}"/>
+            	<apex:column value="{!cand.Country__c}"/>
+            	<apex:column value="{!cand.State__c}"/>
+            	<apex:column value="{!cand.Email__c}"/>
+            	<apex:column value="{!cand.Expected_Salary__c}"/>
+            	<apex:column value="{!cand.Job__c}"/>
+            	<apex:column value="{!cand.Status__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>	
+    </apex:form>
+</apex:page>

@@ -1,0 +1,50 @@
+<apex:page standardController="Candidate_Yourname__c">
+    <apex:form >
+ 		<!--<apex:pageBlock mode="detail" >-->
+        	<apex:pageBlock title="candidate detail">
+                <apex:pageBlockSection columns="1">
+                	<apex:inputField value="{!Candidate_Yourname__c.Salutation__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.First_Name__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Last_Name__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.DOB__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Email__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Application_Date__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Country__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.State__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Expected_Salary__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Status__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Age__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Full_Name__c}"/>
+                    <apex:inputField value="{!Candidate_Yourname__c.Job__c}"/>	
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                	<apex:commandButton action="{!save}" value="Save"/>
+                </apex:pageBlockButtons>
+ </apex:pageBlock>
+ </apex:form> 
+ <apex:form >
+        	<apex:pageBlock title="candidate record details">
+                <apex:pageBlockSection columns="1">
+                	<apex:outputField value="{!Candidate_Yourname__c.Salutation__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.First_Name__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Last_Name__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.DOB__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Email__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Application_Date__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Country__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.State__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Expected_Salary__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Status__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Age__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Full_Name__c}"/>
+                    <apex:outputField value="{!Candidate_Yourname__c.Job__c}"/>	
+                    <!-- <apex:outputLabel value="{!$Label.FullName}"></apex:outputLabel> -->
+                    
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" value="Edit"/>
+ 					<apex:commandButton action="{!delete}" value="Delete"/>
+                </apex:pageBlockButtons>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,48 @@
+<apex:page controller="JobController">
+    <apex:form >
+        <apex:pageBlock title="Edit Job Datails">
+        	<apex:pageBlockSection columns="1">
+            		<apex:inputField value="{!j.Job_Type__c}"/>
+                    <apex:inputField value="{!j.Manager__c}"/>
+                    <apex:inputField value="{!j.Qualification_Required__c}"/>
+                	<apex:inputField value="{!j.Active__c}"/>
+                    <apex:inputField value="{!j.Certification_Required__c}"/>
+                    <apex:inputField value="{!j.Expires_On__c}"/>
+                    <apex:inputField value="{!j.Number_of_Positions__c}"/>
+                    <apex:inputField value="{!j.Qualification_Required__c}"/>
+                    <apex:inputField value="{!j.Required_Skills__c}"/>
+                    <apex:inputField value="{!j.Salary_Offered__c}"/>
+                    <apex:inputField value="{!j.Description__c}"/>
+            </apex:pageBlockSection>
+        	<apex:pageBlockButtons >
+            	<apex:commandButton action="{!save}" value="Save"/>
+            	<apex:commandButton action="{!editit}" value="update"/>         
+               
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!samepage}" var="j">                
+            	 <apex:column headerValue="Update">
+                    	<apex:commandButton action="{!editit}" value="Edit"/><!-- change this for edit -->&nbsp;
+ 						<apex:commandButton action="{!deleteit}" value="Delete"/><!-- change this for update -->
+                </apex:column>              
+            	<apex:column headerValue="Job Type">
+            		<apex:outputField value="{!j.Job_Type__c}"/>
+                </apex:column>                
+            	<apex:column headerValue="Manager">
+            		<apex:outputField value="{!j.Manager__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Required Qualification">
+            		<apex:outputField value="{!j.Qualification_Required__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Required Skill">
+            		<apex:outputField value="{!j.Required_Skills__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Salary Offered">
+            		<apex:outputField value="{!j.Salary_Offered__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Description">
+            		<apex:outputField value="{!j.Description__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

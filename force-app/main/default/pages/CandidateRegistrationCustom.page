@@ -1,0 +1,118 @@
+<apex:page controller="CandidateController" tabStyle="Candidate_Yourname__c">
+    <!-- Add the static resource to page's <head> -->
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <!-- A short bit of jQuery to test it's there -->
+    <!--
+	<script type="text/javascript">
+    	jQuery.noConflict();
+    	jQuery(document).ready(function() {
+            jQuery("#message").html("Hello from jQuery!");
+        });
+    </script>
+	-->
+    <!-- Where the jQuery message will appear -->
+    <h1 id="message"></h1>
+    <apex:form onmouseover="validate()">
+        <apex:pageBlock >
+        	<apex:image url="{!$Resource.enzigma}" width="500" height="250"/></apex:pageBlock>
+        <apex:pageBlock title="Edit Candidate Datails">
+        	<apex:pageBlockSection columns="1">                
+            	<apex:inputField value="{!c.name}" id="name" />
+            	<apex:inputField value="{!c.Salutation__c}" id="salutation"/>
+            	<apex:inputField value="{!c.First_Name__c}" id="fname"/>
+            	<apex:inputField value="{!c.Last_Name__c}" id="lname"/>
+            	<apex:inputField value="{!c.DOB__c}" id="dob"/>
+            	<apex:inputField value="{!c.Application_Date__c}" id="appdate"/>
+            	<apex:inputField value="{!c.Country__c}" id="country"/>
+            	<apex:inputField value="{!c.State__c}" id="state"/>
+            	<apex:inputField value="{!c.Email__c}" id="email"/>
+            	<apex:inputField value="{!c.Expected_Salary__c}" id="expsal"/>
+            	<apex:inputField value="{!c.Job__c}" id="job"/>
+            	<apex:inputField value="{!c.Status__c}" id="status"/>
+                
+            	<apex:commandButton action="{!save}" value="Save" id="theButton"/>
+            	<apex:commandButton action="{!editit}" value="update" />   
+                
+                    <script>
+    	function validate(){
+            
+        	var name=document.getElementById('{!$Component.name}').value;
+        	var salutation=document.getElementById('{!$Component.salutation}').value;
+        	var fname=document.getElementById('{!$Component.fname}').value;
+         
+        	var lname=document.getElementById('{!$Component.lname}').value;
+             
+        	var dob=document.getElementById('{!$Component.dob}').value;
+             
+        	var appdate=document.getElementById('{!$Component.appdate}').value;
+         
+        	var country=document.getElementById('{!$Component.country}').value;
+          
+        	var state=document.getElementById('{!$Component.state}').value;
+
+        	var job=document.getElementById('{!$Component.job}').value;
+
+        	var expsal=document.getElementById('{!$Component.expsal}').value;
+             
+        	var status=document.getElementById('{!$Component.status}').value;
+             
+        	var email=document.getElementById('{!$Component.email}').value; 
+            
+            
+            if(name=="" || salutation=="" || fname=="" || lname=="" || dob=="" || appdate=="" || country=="" || state=="" || job=="" || expsal=="" || status=="" || email==""){
+            	document.getElementById('{!$Component.theButton}').disabled=true;
+            }else{
+            	document.getElementById('{!$Component.theButton}').disabled=false;
+            }
+            
+        }</script>
+            </apex:pageBlockSection>
+        	<apex:pageBlockButtons >      
+               
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!samepage}" var="c">                
+            	 <apex:column headerValue="Update">
+                    	<apex:commandButton action="{!editit}" value="Edit"/><!-- change this for edit -->&nbsp;
+ 						<apex:commandButton action="{!deleteit}" value="Delete"/><!-- change this for update -->
+                </apex:column>              
+            	<apex:column headerValue="Salutation">
+            		<apex:outputField value="{!c.Salutation__c}"/>
+                </apex:column>                
+            	<apex:column headerValue="First Name">
+            		<apex:outputField value="{!c.First_Name__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Last Name">
+            		<apex:outputField value="{!c.Last_Name__c}"/>
+                </apex:column>
+            	<apex:column headerValue="DOB">
+            		<apex:outputField value="{!c.DOB__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Application Date">
+            		<apex:outputField value="{!c.Application_Date__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Country">
+            		<apex:outputField value="{!c.Country__c}"/>
+                </apex:column>
+            	<apex:column headerValue="State">
+            		<apex:outputField value="{!c.State__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Email">
+            		<apex:outputField value="{!c.Email__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Expected Salary">
+            		<apex:outputField value="{!c.Expected_Salary__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Job">
+            		<apex:outputField value="{!c.Job__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Status">
+            		<apex:outputField value="{!c.Status__c}"/>
+                </apex:column>
+            	<apex:column headerValue="Email">
+            		<apex:outputField value="{!c.Email__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
